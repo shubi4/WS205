@@ -30,5 +30,16 @@ tail -n +2 surveys_responses.csv > surveys_responses2.csv
 
 #copy to HDFS
 hdfs dfs -mkdir /user/w205/hospital_compare
-hdfs dfs -put exercise1/selected/*2.csv /user/w205/hospital_compare
+hdfs dfs -mkdir /user/w205/hospital_compare/hospitals
+hdfs dfs -mkdir /user/w205/hospital_compare/effective_care
+hdfs dfs -mkdir /user/w205/hospital_compare/measures
+hdfs dfs -mkdir /user/w205/hospital_compare/readmissions
+hdfs dfs -mkdir /user/w205/hospital_compare/surveys
+
+hdfs dfs -put ~/exercise1/selected/hospitals2.csv  /user/w205/hospital_compare/hospitals
+hdfs dfs -put ~/exercise1/selected/measures2.csv  /user/w205/hospital_compare/measures
+hdfs dfs -put ~/exercise1/selected/readmissions2.csv  /user/w205/hospital_compare/readmissions
+hdfs dfs -put ~/exercise1/selected/surveys_responses2.csv  /user/w205/hospital_compare/surveys
+hdfs dfs -put ~/exercise1/selected/effective_care2.csv /user/w205/hospital_compare/effective_care
+
 
