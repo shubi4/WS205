@@ -1,0 +1,13 @@
+The table below shows the top 10 hospitals based on overall score across all measures. This was computed by adding up the measurres' scores for each hospital, then sorting from high to low. Missing data was treated as 0.
+
+[(u'310002', (5121, (u'NEWARK BETH ISRAEL MEDICAL CENTER', u'NJ'))), 
+(u'330202', (5045, (u'KINGS COUNTY HOSPITAL CENTER', u'NY'))), 
+(u'330101', (4807, (u'NEW YORK-PRESBYTERIAN HOSPITAL', u'NY'))), 
+(u'450289', (4721, (u'HARRIS HEALTH SYSTEM', u'TX'))), (
+u'050060', (4645, (u'COMMUNITY REGIONAL MEDICAL CENTER', u'CA'))), 
+(u'320001', (4611, (u'UNM HOSPITAL', u'NM'))), 
+(u'450213', (4605, (u'UNIVERSITY HEALTH SYSTEM', u'TX'))), 
+(u'050327', (4578, (u'LOMA LINDA UNIVERSITY MEDICAL CENTER', u'CA'))), 
+(u'180067', (4519, (u'UNIVERSITY OF KENTUCKY HOSPITAL', u'KY'))), (
+u'050292', (4504, (u'RIVERSIDE COUNTY REGIONAL MEDICAL CENTER', u'CA')))]
+

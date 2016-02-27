@@ -1,0 +1,14 @@
+The top 10 states by overall measure scores. The reasoning is the same as for hospital measures
+
+
+[(u'MD', 7828), 
+(u'DC', 7774), 
+(u'NY', 7637), (
+u'CT', 756), (
+u'DE', 7473), 
+(u'CA', 7383), 
+(u'NM', 7341), (
+u'NJ', 7228), (
+u'MA', 7100), (
+u'NC', 7011)]
+
