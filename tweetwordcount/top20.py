@@ -31,7 +31,7 @@ fig = plt.figure()
 width = .35
 ind = np.arange(len(counts))
 plt.bar(ind, counts, width=width)
-plt.xticks(ind + width / 2, words)
+plt.xticks(ind + width / 2, words, rotation="vertical")
 plt.xlabel("Top 20 words")
 plt.ylabel("Counts")
 plt.savefig("plot.png")
