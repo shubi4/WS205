@@ -1,0 +1,20 @@
+these are the best hospitals as measured by survey scores. Comparing with the best_hospitals investigations, I didnt find any matches among the top 10. In order to investigate this further, we should do statistical analysis (e.g regression on patient scores and hospital scores).
+
+[(u'110200', (100, (u'NORTHSIDE MEDICAL CENTER', u'GA'))), 
+(u'430092', (100, (u'DAKOTA PLAINS SURGICAL CENTER LLP', u'SD'))), 
+(u'390316', (100, (u'SURGICAL INSTITUTE OF READING', u'PA'))), 
+(u'670049', (100, (u'NORTH CENTRAL SURGICAL CENTER LLP', u'TX'))),
+ (u'390323', (100, (u'ADVANCED SURGICAL HOSPITAL', u'PA'))),
+ (u'100313', (100, (u'SACRED HEART HOSPITAL ON THE GULF', u'FL'))),
+ (u'190259', (100, (u'LAFAYETTE SURGICAL SPECIALTY HOSPITAL', u'LA'))),
+ (u'170190', (100, (u'MANHATTAN SURGICAL HOSPITAL LLC', u'KS'))),
+ (u'040152', (100, (u"PHYSICIANS' SPECIALTY HOSPITAL", u'AR'))),
+ (u'010045', (100, (u'FAYETTE MEDICAL CENTER', u'AL')))]
+
+
+These (below) are the worst hospitals as measured by patient scores. Again, I did not find any of these hospitals in the hosp_variability list (one could argue that high variability in measures' scores might lead to poor patient survey results). But  the resuts are not conclusive; we need to run further analysis on the data.
+
+>>> surveys_worst.take(10)
+[(u'260080', (0, (u'SOUTHEAST HEALTH CENTER OF RIPLEY COUNTY', u'MO'))), (u'450641', (0, (u'NOCONA GENERAL HOSPITAL', u'TX'))), (u'140083', (0, (u'LORETTO HOSPITAL', u'IL'))), (u'450498', (0, (u'STEPHENS MEMORIAL HOSPITAL', u'TX'))), (u'190145', (0, (u'LASALLE GENERAL HOSPITAL', u'LA'))), (u'140197', (0, (u'METHODIST HOSPITAL OF CHICAGO', u'IL'))), (u'450586', (0, (u'SEYMOUR HOSPITAL', u'TX'))), (u'450584', (0, (u'WILBARGER GENERAL HOSPITAL', u'TX'))), (u'440040', (0, (u'PERRY COMMUNITY HOSPITAL', u'TN'))), (u'460039', (0, (u'BEAR RIVER VALLEY HOSPITAL', u'UT')))]
+
+
