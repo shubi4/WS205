@@ -28,7 +28,7 @@ class ParseTweet(Bolt):
             if word.startswith("@"): continue
 
             # Filter out retweet tags
-            if word.startswith("RT"): continue
+            if word.startswith("rt"): continue
 
             # Filter out the urls
             if word.startswith("http"): continue
