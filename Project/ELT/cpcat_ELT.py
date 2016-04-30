@@ -1,12 +1,12 @@
 #pyspark --packages com.databricks:spark-csv_2.10:1.2.0
-#spark-submit --packages com.databricks:spark-csv_2.10:1.2.0 cpcat_ETL.py
+#spark-submit --packages com.databricks:spark-csv_2.10:1.2.0 cpcat_ELT.py
 
 from pyspark import SparkContext
 from pyspark.sql import SQLContext
 from pyspark.sql.types import *
 from pyspark.sql.functions import *
 
-sc = SparkContext("local", "weblog app")
+sc = SparkContext("local")
 sqlContext = SQLContext(sc)
 
 ######### LOADING the data, with headers ####################
@@ -362,19 +362,19 @@ print "Finished processed categories"
 ########### Saving to HDFS
 #save chemicals
 print "Saving chemicals"
-dfchemicals.coalesce(1).write.mode('overwrite').parquet("/user/w205/project/test/dfchemicals.parquet")
+dfchemicals.coalesce(1).write.mode('overwrite').parquet("/user/w205/project/dfchemicals.parquet")
 
 #save chemical categories
 print "saving chemicals and categories"
-dfchemcat.coalesce(1).write.mode('overwrite').parquet("/user/w205/project/test/dfchemcat.parquet")
+dfchemcat.coalesce(1).write.mode('overwrite').parquet("/user/w205/project/dfchemcat.parquet")
 
 #save categories list
 print "saving categories"
-dfcategories.coalesce(1).write.mode('overwrite').parquet("/user/w205/project/test/dfcategories.parquet")
+dfcategories.coalesce(1).write.mode('overwrite').parquet("/user/w205/project/dfcategories.parquet")
 
 #save products list
 print "saving products"
-dfproducts.coalesce(1).write.mode('overwrite').parquet("/user/w205/project/test/dfproducts.parquet")
+dfproducts.coalesce(1).write.mode('overwrite').parquet("/user/w205/project/dfproducts.parquet")
 
 
 #dfchemicals.coalesce(1).write.mode('overwrite').options(header="true").format('com.databricks.spark.csv').save('/user/w205/project/dfchemicals.csv')
