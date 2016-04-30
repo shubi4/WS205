@@ -1,8 +1,10 @@
+###Chemicals Around Us
+
 This project explores chemicals used most commonly in consumer and industrial products, and attempts to capture their toxicity and exposure levels. The inspiration for the project is the website http://www.goodguide.com. The website uses over 1,000 data sources to gather information about chemicals used in products and their impact on human health and the environment. 
 
 The goal with this project is to gather information about chemicals, their toxicity to humans and the environment, and the products and categories they are used in, and to allow efficient querying of this data.
 
-DATA SOURCES:
+##### DATA SOURCES:
 
 1. Chemical Product Categories database (http://actor.epa.gov/cpcat/faces/home.xhtml): This is a database of over 43,000 chemicals and over 1,000 categories of use, and over 200,000+ products that use these chemicals. Examples of categories are "manufacturing", "personal_care", "adhesive", etc. Categories may be composed of multiple words, with each word adding a new level of information akin to a hierarchy. To scope the project, I selected just the first word of the category and formed around 200 new "super categories".
 
@@ -11,7 +13,7 @@ DATA SOURCES:
     - products.txt: This file contains product names and the chemicals found in the product. There is a row per unique combination of product and chemical. 800,000+ entries.
 
 
-2.  Safer chemicals: (https://www.epa.gov/saferchoice/safer-ingredients) : contains a list of safe chemicals
+2. Safer chemicals: (https://www.epa.gov/saferchoice/safer-ingredients) : contains a list of safe chemicals
 
 3. Toxic chemicals:
     Recognized cancer causing
@@ -34,7 +36,7 @@ DATA SOURCES:
 A note about the data sources: There is a large amount of information available publicly about chemicals and toxicity. CpCat database is an attempt by the EPA to create a comprehensive "exposure profile" for each known chemical. For toxic chemicals, there are several data sources, and not a single comprehensive one. I eventually chose a subset of the chemicals reported in the GoodGuide's scorecard website. The list of toxic and safe chemicals together do not cover all of the 43,000+ chemicals in CPCat: this is partly due to the selective toxicity data sources used in the project, but also more due the fact that very few chemicals have been tested and quantified for toxicity. The CPCat database is a starting point for researchers to determine which chemicals have high exposure profiles, and focus their limited budgets and efforts on testing those chemicals first.
 
 
-FOLDER AND FILE STRUCTURE
+#### FOLDER AND FILE STRUCTURE
 
 1. Data: this folder contains all the data used in the project, as mentioned in the section "Data Sources". It is uploaded to github as a single compressed folder - data.zip. Unzip the folder and copy the files to the EC2 instance at the path: /home/w205/project/data/WithHeaders
 
@@ -46,7 +48,7 @@ FOLDER AND FILE STRUCTURE
             spark-submit --packages com.databricks:spark-csv_2.10:1.2.0 cpcat_ELT.py
             spark-submit --packages com.databricks:spark-csv_2.10:1.2.0 cpcat_ELT2.py
 
-The ELT scripts use pyspark DataFrames to process the source files. 4 output parquet files are produced:
+    The ELT scripts use pyspark DataFrames to process the source files. 4 output parquet files are produced:
 
     - dfchemicals.parquet: Contains the chemical name and information on the chemical - the number of categories it appears in, the number of products it appears in, whether it is safe or toxic (with 8 toxicity categories); and an overall toxicity score based on how many toxicity categories the chemical appears in.
     
