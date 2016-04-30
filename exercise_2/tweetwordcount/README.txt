@@ -17,7 +17,7 @@ Steps to run:-
    NOTE: This will create the database Tcount and table Tweetwordcount inside. The db and table names are case-sensitive.
 4. Run the streamparse application:
     sparse run
-   When the application runs, you will see a stream of words which are alos being written to the postgres db. Stop the application anytime using Ctrl-Create
+   When the application runs, you will see a stream of words which are also being written to the postgres db. Stop the application anytime using Ctrl-C
 5. Run the python script finalwords.py to see counts for a single word or all words (leave out the parameter). Run histogram.py to see all words with a specific range of occurrences.
 6. To create a bar chart called plot.png, run top20.py
    
